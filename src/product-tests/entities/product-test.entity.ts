@@ -10,7 +10,7 @@ export class ProductTest {
   @ManyToOne(() => User, (user) => user.tests, { onDelete: 'CASCADE' })
   tester: User; // Se relaciona con la entidad `User` (tester)
 
-  @ManyToOne(() => Makeup, (product) => product.tests, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Makeup, (makeup) => makeup.tests, { onDelete: 'CASCADE' })
   product: Makeup; // Se relaciona con `MakeupProduct`
 
   @Column({ type: 'text', nullable: true })

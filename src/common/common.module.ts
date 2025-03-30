@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { CommonEntity } from './entities/common.entity';
 import { CommonService } from './common.service';
-import { CommonController } from './common.controller';
 
 @Module({
-  controllers: [CommonController],
+  imports: [TypeOrmModule.forFeature([CommonEntity])],
   providers: [CommonService],
+  exports: [CommonService],
 })
 export class CommonModule {}
